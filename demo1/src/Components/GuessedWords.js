@@ -35,7 +35,7 @@ let GuessedWords = function ({ guessedWords }) {
               <td>Matching Length</td>
             </tr>
           </thead>
-          {data}
+          <tbody>{data}</tbody>
         </table>
       </div>
     );

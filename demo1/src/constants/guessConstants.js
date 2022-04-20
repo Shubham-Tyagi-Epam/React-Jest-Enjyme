@@ -1,0 +1,2 @@
+export const GUESS_SUCCESS = "GUESS_SUCCESS";
+export const GUESS_FAILURE = "GUESS_FAILURE";

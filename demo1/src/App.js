@@ -3,8 +3,13 @@ import "./App.css";
 import Congrats from "./Components/Congrats";
 import GuessedWords from "./Components/GuessedWords";
 import Input from "./Components/Input";
+import { getSecretWord } from "./actions";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    getSecretWord();
+  }, []);
   return (
     <div data-test="component-app" className="container text-center">
       <h1 data-test="comp"> Jotto </h1>
