@@ -23,11 +23,11 @@ describe("get secret word", () => {
   });
 });
 
-describe("Guess Success or failiure actions", () => {
-  test(" Guess Success ", () => {
-    const action = correctGuess();
-    expect(action).toEqual({
-      type: GUESS_SUCCESS,
-    });
-  });
-});
+// describe("Guess Success or failiure actions", () => {
+//   test(" Guess Success ", () => {
+//     const action = correctGuess();
+//     expect(action).toEqual({
+//       type: GUESS_SUCCESS,
+//     });
+//   });
+// });

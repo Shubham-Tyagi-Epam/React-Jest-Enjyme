@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 let Input = function (props) {
   const [guessWord, setGuessWord] = useState("");
-  if (props.success == false) {
+  let success = useSelector((state) => state.success);
+  if (success == false) {
     return (
       <div data-test="component-input" className="my-4">
         <form className="w-75 mx-auto">

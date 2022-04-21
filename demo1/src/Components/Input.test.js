@@ -1,7 +1,8 @@
-import { findByAttr } from "../testUtils";
-import { shallow } from "enzyme";
+import { findByAttr, storeFactory } from "../testUtils";
+import { mount, shallow } from "enzyme";
 import Input from "./Input";
 import React from "react";
+import { Provider } from "react-redux";
 
 const mockSetCurrentGuess = jest.fn();
 
@@ -12,7 +13,12 @@ jest.mock("React", () => ({
 // useState: () => ["", mockSetCurrentGuess] : we can use this also if we want inside the jest.mock function but writing initialState as argument is better
 
 function setup(success = false, secretWord = "party") {
-  return shallow(<Input success={success} secretWord={secretWord} />);
+  let store = storeFactory({ success: success });
+  return mount(
+    <Provider store={store}>
+      <Input success={success} secretWord={secretWord} />
+    </Provider>
+  );
 }
 
 describe("Test the components when the sucess is either true or false", () => {

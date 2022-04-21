@@ -5,10 +5,17 @@ jest.mock("./actions");
 // import { getSecretWord } from "./actions";
 import { getSecretWord } from "./actions";
 import { mount, shallow } from "enzyme";
+import { Provider } from "react-redux";
+import { storeFactory } from "./testUtils";
 
 const setup = () => {
   // use mount because use effect is not called on shallow
-  return mount(<App />);
+  let store = storeFactory({ success: false });
+  return mount(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 };
 
 test("renders Without any errors", () => {});
